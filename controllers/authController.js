@@ -13,7 +13,7 @@ import CustomAPIError from '../errors/customAPIError.js';
 import createSendToken from '../middlewares/createSendToken.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 
-exports.login = asyncMiddleware(async (req, res, next) => {
+const login = asyncMiddleware(async (req, res, next) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -28,7 +28,7 @@ exports.login = asyncMiddleware(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, res);
 });
 
-exports.protect = asyncMiddleware(async (req, res, next) => {
+const protect = asyncMiddleware(async (req, res, next) => {
   let token;
   const authHeader = req.headers.authorization;
 
@@ -74,7 +74,7 @@ exports.protect = asyncMiddleware(async (req, res, next) => {
   next();
 });
 
-exports.restrictTo = (...roles) => {
+const restrictTo = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
       return next(
@@ -85,7 +85,7 @@ exports.restrictTo = (...roles) => {
   };
 };
 
-exports.forgotPasword = asyncMiddleware(async (req, res, next) => {
+const forgotPasword = asyncMiddleware(async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {
@@ -145,7 +145,7 @@ exports.forgotPasword = asyncMiddleware(async (req, res, next) => {
   }
 });
 
-exports.resetPassword = asyncMiddleware(async (req, res, next) => {
+const resetPassword = asyncMiddleware(async (req, res, next) => {
   const { password, confirmPassword } = req.body;
 
   const hashedToken = crypto
@@ -171,7 +171,7 @@ exports.resetPassword = asyncMiddleware(async (req, res, next) => {
   createSendToken(user, StatusCodes.OK, res);
 });
 
-exports.updatePassword = asyncMiddleware(async (req, res, next) => {
+const updatePassword = asyncMiddleware(async (req, res, next) => {
   const { password, confirmPassword, currentPassword } = req.body;
 
   const user = await User.findById(req.user.id).select('+password');
@@ -186,3 +186,14 @@ exports.updatePassword = asyncMiddleware(async (req, res, next) => {
 
   createSendToken(user, StatusCodes.OK, res);
 });
+
+const authController = {
+  login,
+  protect,
+  restrictTo,
+  forgotPasword,
+  resetPassword,
+  updatePassword,
+};
+
+export default authController;
