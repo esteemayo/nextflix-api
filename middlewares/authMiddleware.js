@@ -12,7 +12,6 @@ const protect = asyncMiddleware(async (req, res, next) => {
     token = authHeader.split(' ')[1];
   }
 
-  // token verification
   if (!token) {
     return next(
       new UnauthenticatedError(
@@ -26,7 +25,6 @@ const protect = asyncMiddleware(async (req, res, next) => {
     process.env.JWT_SECRET_KEY
   );
 
-  // check if user still exists
   const currentUser = await User.findById(decoded.id);
   if (!currentUser) {
     return next(
@@ -36,7 +34,6 @@ const protect = asyncMiddleware(async (req, res, next) => {
     );
   }
 
-  // check if user changed password after the token was issued
   if (currentUser.changedPasswordAfter(decoded.iat)) {
     return next(
       new UnauthenticatedError(
@@ -45,7 +42,6 @@ const protect = asyncMiddleware(async (req, res, next) => {
     );
   }
 
-  // grant access to protected routes
   req.user = currentUser;
   next();
 });
