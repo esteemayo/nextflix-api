@@ -1,30 +1,27 @@
 import express from 'express';
 
-import authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 import movieController from '../controllers/movieController.js';
 
 const router = express.Router();
 
-router.use(authController.protect);
+router.use(authMiddleware.protect);
 
 router
   .route('/')
-  .get(authController.restrictTo('admin', 'user'), movieController.getAllMovies)
-  .post(authController.restrictTo('admin'), movieController.createMovie);
+  .get(authMiddleware.restrictTo('admin', 'user'), movieController.getAllMovies)
+  .post(authMiddleware.restrictTo('admin'), movieController.createMovie);
 
 router
   .route('/:id')
-  .patch(authController.restrictTo('admin'), movieController.updateMovie)
-  .delete(authController.restrictTo('admin'), movieController.deleteMovie);
+  .patch(authMiddleware.restrictTo('admin'), movieController.updateMovie)
+  .delete(authMiddleware.restrictTo('admin'), movieController.deleteMovie);
 
 router.get('/find/:id', movieController.getMovieById);
 
 router.get('/random', movieController.getRandomMovies);
 
-router.get(
-  '/details/:slug',
-  movieController.getMovieBySlug
-);
+router.get('/details/:slug', movieController.getMovieBySlug);
 
 router.get('/search', movieController.searchMovies);
 
