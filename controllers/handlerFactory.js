@@ -4,7 +4,7 @@ import APIFeatures from '../utils/apiFeatures';
 import asyncMiddleware from '../utils/asyncMiddleware';
 import NotFoundError from '../errors/notFound';
 
-exports.getAll = (Model) =>
+const getAll = (Model) =>
   asyncMiddleware(async (req, res, next) => {
     const features = new APIFeatures(Model.find(), req.query)
       .filter()
@@ -23,7 +23,7 @@ exports.getAll = (Model) =>
     });
   });
 
-exports.getOneById = (Model) =>
+const getOneById = (Model) =>
   asyncMiddleware(async (req, res, next) => {
     const { id: docID } = req.params;
 
@@ -41,7 +41,7 @@ exports.getOneById = (Model) =>
     });
   });
 
-exports.OneBySlug = (Model) =>
+const getOneBySlug = (Model) =>
   asyncMiddleware(async (req, res, next) => {
     const { slug } = req.params;
 
@@ -59,7 +59,7 @@ exports.OneBySlug = (Model) =>
     });
   });
 
-exports.createOne = (Model) =>
+const createOne = (Model) =>
   asyncMiddleware(async (req, res, next) => {
     const doc = await Model.create({ ...req.body });
 
@@ -69,7 +69,7 @@ exports.createOne = (Model) =>
     });
   });
 
-exports.updateOne = (Model) =>
+const updateOne = (Model) =>
   asyncMiddleware(async (req, res, next) => {
     const { id: docID } = req.params;
 
@@ -94,7 +94,7 @@ exports.updateOne = (Model) =>
     });
   });
 
-exports.deleteOne = (Model) =>
+const deleteOne = (Model) =>
   asyncMiddleware(async (req, res, next) => {
     const { id: docID } = req.params;
 
@@ -111,3 +111,15 @@ exports.deleteOne = (Model) =>
       doc: null,
     });
   });
+
+
+const factory = {
+  getAll,
+  getOneById,
+  getOneBySlug,
+  createOne,
+  updateOne,
+  deleteOne,
+};
+
+export default factory;
