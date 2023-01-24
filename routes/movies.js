@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 
-const authController = require('../controllers/authController');
-const movieController = require('../controllers/movieController');
+import authController from '../controllers/authController.js';
+import movieController from '../controllers/movieController.js';
 
 const router = express.Router();
 
@@ -29,4 +29,4 @@ router.get(
 
 router.get('/search', movieController.searchMovies);
 
-module.exports = router;
+export default router;
