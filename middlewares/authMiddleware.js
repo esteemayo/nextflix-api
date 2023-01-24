@@ -10,6 +10,8 @@ const protect = asyncMiddleware(async (req, res, next) => {
 
   if (authHeader && authHeader.startsWith('Bearer')) {
     token = authHeader.split(' ')[1];
+  } else if (req.cookies.jwtToken) {
+    token = req.cookies.jwtToken;
   }
 
   if (!token) {
