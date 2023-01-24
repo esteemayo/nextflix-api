@@ -1,0 +1,809 @@
+openapi: 3.0.0
+info:
+  title: Netflix-API
+  contact:
+    name: Emmanuel Adebayo
+    email: eadebayo15@gmail.com
+  version: '1.0'
+servers:
+  - url: http://localhost:9900/api/v1
+    variables: {}
+paths:
+  /users:
+    get:
+      tags:
+        - User
+      summary: GET ALL USERS
+      operationId: GETALLUSERS
+      parameters:
+        - name: new
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: boolean
+            example: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    post:
+      tags:
+        - User
+      summary: CREATE NEW USER
+      operationId: CREATENEWUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The User ID
+    get:
+      tags:
+        - User
+      summary: GET USER
+      operationId: GETUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - User
+      summary: UPDATE USER
+      operationId: UPDATEUSER
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATEUSERREQUEST'
+            example:
+              username: ''
+              email: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    delete:
+      tags:
+        - User
+      summary: DELETE USER
+      operationId: DELETEUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/me:
+    get:
+      tags:
+        - User
+      summary: GET CURRENT USER
+      operationId: GETCURRENTUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/stats:
+    get:
+      tags:
+        - User
+      summary: GET USERS STATS
+      operationId: GETUSERSSTATS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/register:
+    post:
+      tags:
+        - User
+      summary: REGISTER NEW USER
+      operationId: REGISTERNEWUSER
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/REGISTERNEWUSERREQUEST'
+            example:
+              username: ''
+              email: ''
+              password: ''
+              confirmPassword: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /users/update-me:
+    patch:
+      tags:
+        - User
+      summary: UPDATE CURRENT USER DATA
+      operationId: UPDATECURRENTUSERDATA
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATECURRENTUSERDATAREQUEST'
+            example:
+              username: ''
+              email: .
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /users/delete-me:
+    delete:
+      tags:
+        - User
+      summary: DELETE CURRENT USER
+      operationId: DELETECURRENTUSER
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: LOGIN
+      operationId: LOGIN
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LOGINREQUEST'
+            example:
+              username: ''
+              password: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/forgot-password:
+    post:
+      tags:
+        - Auth
+      summary: FORGOT PASSWORD
+      operationId: FORGOTPASSWORD
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FORGOTPASSWORDREQUEST'
+            example:
+              email: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/reset-password/{token}:
+    parameters:
+      - in: path
+        name: token
+        schema:
+          type: string
+        required: true
+        description: The User Password Reset TOKEN
+    post:
+      tags:
+        - Auth
+      summary: RESET PASSWORD
+      operationId: RESETPASSWORD
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RESETPASSWORDREQUEST'
+            example:
+              password: ''
+              confirmPassword: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/update-my-password:
+    patch:
+      tags:
+        - Auth
+      summary: UPDATE CURRENT USER PASSWORD
+      operationId: UPDATECURRENTUSERPASSWORD
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATECURRENTUSERPASSWORDREQUEST'
+            example:
+              currentPassword: ''
+              password: ''
+              confirmPassword: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /movies:
+    get:
+      tags:
+        - Movie
+      summary: GET ALL MOVIES
+      operationId: GETALLMOVIES
+      parameters:
+        - name: fields
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: title,desc,img,year,genre,isSeries
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    post:
+      tags:
+        - Movie
+      summary: CREATE NEW MOVIE
+      operationId: CREATENEWMOVIE
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CREATENEWMOVIEREQUEST'
+            example:
+              title: ''
+              desc: ''
+              img: ''
+              imgTitle: ''
+              imgSm: ''
+              trailer: ''
+              video: ''
+              year: ''
+              limit: ''
+              genre: ''
+              isSeries: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /movies/find/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The Movie ID
+    get:
+      tags:
+        - Movie
+      summary: GET MOVIE BY ID
+      operationId: GETMOVIEBYID
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /movies/details/{slug}:
+    parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+        description: The Movie SLUG
+    get:
+      tags:
+        - Movie
+      summary: GET MOVIE BY SLUG
+      operationId: GETMOVIEBYSLUG
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /movies/random:
+    get:
+      tags:
+        - Movie
+      summary: GET RANDOM MOVIE
+      operationId: GETRANDOMMOVIE
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /movies/search:
+    get:
+      tags:
+        - Movie
+      summary: SEARCH MOVIES
+      operationId: SEARCHMOVIES
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /movies/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The Movie ID
+    patch:
+      tags:
+        - Movie
+      summary: UPDATE MOVIE
+      operationId: UPDATEMOVIE
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATEMOVIEREQUEST'
+            example:
+              title: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    delete:
+      tags:
+        - Movie
+      summary: DELETE MOVIE
+      operationId: DELETEMOVIE
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /lists:
+    get:
+      tags:
+        - List
+      summary: GET ALL LISTS
+      operationId: GETALLLISTS
+      parameters:
+        - name: type
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: series
+        - name: genre
+          in: query
+          description: ''
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: comedy
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    post:
+      tags:
+        - List
+      summary: CREATE NEW LIST
+      operationId: CREATENEWLIST
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CREATENEWLISTREQUEST'
+            example:
+              title: ''
+              type: ''
+              genre: ''
+              content:
+                - ''
+                - ''
+                - ''
+                - ''
+                - ''
+                - ''
+                - ''
+                - ''
+                - ''
+                - ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /lists/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The List ID
+    get:
+      tags:
+        - List
+      summary: GET LIST
+      operationId: GETLIST
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - List
+      summary: UPDATE LIST
+      operationId: UPDATELIST
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UPDATELISTREQUEST'
+            example:
+              title: ''
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    delete:
+      tags:
+        - List
+      summary: DELETE LIST
+      operationId: DELETELIST
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+components:
+  schemas:
+    REGISTERNEWUSERREQUEST:
+      title: REGISTER NEW USER REQUEST
+      required:
+        - username
+        - email
+        - password
+        - confirmPassword
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        confirmPassword:
+          type: string
+      example:
+        username: ''
+        email: ''
+        password: ''
+        confirmPassword: ''
+    UPDATEUSERREQUEST:
+      title: UPDATE USER REQUEST
+      required:
+        - username
+        - email
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+      example:
+        username: ''
+        email: ''
+    UPDATECURRENTUSERDATAREQUEST:
+      title: UPDATE CURRENT USER DATA REQUEST
+      required:
+        - username
+        - email
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+      example:
+        username: ''
+        email: .
+    LOGINREQUEST:
+      title: LOGIN REQUEST
+      required:
+        - username
+        - password
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      example:
+        username: ''
+        password: ''
+    FORGOTPASSWORDREQUEST:
+      title: FORGOT PASSWORD REQUEST
+      required:
+        - email
+      type: object
+      properties:
+        email:
+          type: string
+      example:
+        email: ''
+    RESETPASSWORDREQUEST:
+      title: RESET PASSWORD REQUEST
+      required:
+        - password
+        - confirmPassword
+      type: object
+      properties:
+        password:
+          type: string
+        confirmPassword:
+          type: string
+      example:
+        password: ''
+        confirmPassword: ''
+    UPDATECURRENTUSERPASSWORDREQUEST:
+      title: UPDATE CURRENT USER PASSWORD REQUEST
+      required:
+        - currentPassword
+        - password
+        - confirmPassword
+      type: object
+      properties:
+        currentPassword:
+          type: string
+        password:
+          type: string
+        confirmPassword:
+          type: string
+      example:
+        currentPassword: ''
+        password: ''
+        confirmPassword: ''
+    CREATENEWMOVIEREQUEST:
+      title: CREATE NEW MOVIE REQUEST
+      required:
+        - title
+        - desc
+        - img
+        - imgTitle
+        - imgSm
+        - trailer
+        - video
+        - year
+        - limit
+        - genre
+        - isSeries
+      type: object
+      properties:
+        title:
+          type: string
+        desc:
+          type: string
+        img:
+          type: string
+        imgTitle:
+          type: string
+        imgSm:
+          type: string
+        trailer:
+          type: string
+        video:
+          type: string
+        year:
+          type: string
+        limit:
+          type: string
+        genre:
+          type: string
+        isSeries:
+          type: string
+      example:
+        title: ''
+        desc: ''
+        img: ''
+        imgTitle: ''
+        imgSm: ''
+        trailer: ''
+        video: ''
+        year: ''
+        limit: ''
+        genre: ''
+        isSeries: ''
+    UPDATEMOVIEREQUEST:
+      title: UPDATE MOVIE REQUEST
+      required:
+        - title
+      type: object
+      properties:
+        title:
+          type: string
+      example:
+        title: ''
+    CREATENEWLISTREQUEST:
+      title: CREATE NEW LIST REQUEST
+      required:
+        - title
+        - type
+        - genre
+        - content
+      type: object
+      properties:
+        title:
+          type: string
+        type:
+          type: string
+        genre:
+          type: string
+        content:
+          type: array
+          items:
+            type: string
+          description: ''
+      example:
+        title: ''
+        type: ''
+        genre: ''
+        content:
+          - ''
+          - ''
+          - ''
+          - ''
+          - ''
+          - ''
+          - ''
+          - ''
+          - ''
+          - ''
+    UPDATELISTREQUEST:
+      title: UPDATE LIST REQUEST
+      required:
+        - title
+      type: object
+      properties:
+        title:
+          type: string
+      example:
+        title: ''
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: User
+  - name: Auth
+  - name: Movie
+  - name: List

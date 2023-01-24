@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "6261d4b27da88ce2f25f826e",
+    "username": "admin",
+    "email": "admin@netflix.com",
+    "role": "admin",
+    "password": "$2a$12$kaFMx2Tn2F7bu.QpJYduIuscutkXsE6SMIDjDDLnltPJkN62cS5Im",
+    "avatar": "",
+    "createdAt": "2022-01-21T22:03:30.768Z",
+    "updatedAt": "2022-01-21T22:03:30.768Z"
+  },
+  {
+    "_id": "6261d5007da88ce2f25f8270",
+    "username": "maye",
+    "email": "maye.admin@netflix.com",
+    "role": "admin",
+    "password": "$2a$12$RC7m1oQTiVHjhYIgpmcMJODEP1oDT3W.sDOcbwxxF.lKtZkZJ1UgS",
+    "avatar": "",
+    "createdAt": "2022-01-21T22:04:48.491Z",
+    "updatedAt": "2022-01-21T22:04:48.491Z"
+  },
+  {
+    "_id": "6261d5217da88ce2f25f8272",
+    "username": "jdoe",
+    "email": "jdoe@example.com",
+    "role": "user",
+    "password": "$2a$12$RomaAcMdHoMi5t5T41rLiOMaM.3arjStIu9EdCoVIwiP60BHfuoba",
+    "avatar": "",
+    "createdAt": "2022-02-21T22:05:21.461Z",
+    "updatedAt": "2022-02-21T22:05:21.461Z"
+  },
+  {
+    "_id": "6261d5277da88ce2f25f8274",
+    "username": "mdoe",
+    "email": "mdoe@example.com",
+    "role": "user",
+    "password": "$2a$12$O6QlZ8h6zR8Ewr4J/yhPRuMyt3j7aO5hCW2q/Ve4qp4yADN8q40ym",
+    "avatar": "",
+    "createdAt": "2022-02-21T22:05:27.050Z",
+    "updatedAt": "2022-02-21T22:05:27.050Z"
+  },
+  {
+    "_id": "6261d52e7da88ce2f25f8276",
+    "username": "loulou",
+    "email": "loulou@example.com",
+    "role": "user",
+    "password": "$2a$12$cggwhrarwHrzI7X6hyWRAeyATxAw46js9EM8kpqMXtG0LaUqrGEqm",
+    "avatar": "",
+    "createdAt": "2022-02-21T22:05:34.525Z",
+    "updatedAt": "2022-02-21T22:05:34.525Z"
+  },
+  {
+    "_id": "6261d5447da88ce2f25f8278",
+    "username": "chris",
+    "email": "chris@example.com",
+    "role": "user",
+    "password": "$2a$12$jrTsANiIrRa7nJkKXRZThOLKbABYGoqmNFBa8/AZwV7uF9woM0ScO",
+    "avatar": "",
+    "createdAt": "2022-03-21T22:05:56.902Z",
+    "updatedAt": "2022-03-21T22:05:56.902Z"
+  },
+  {
+    "_id": "6261d54b7da88ce2f25f827a",
+    "username": "alex",
+    "email": "alex@example.com",
+    "role": "user",
+    "password": "$2a$12$K2DYZDJmCcLFPdFjb8JTWuoXfDDrqyZCU2entWj.pZDUXnViQIShO",
+    "avatar": "",
+    "createdAt": "2022-03-21T22:06:03.199Z",
+    "updatedAt": "2022-03-21T22:06:03.199Z"
+  },
+  {
+    "_id": "6261d5527da88ce2f25f827c",
+    "username": "alice",
+    "email": "alice@example.com",
+    "role": "user",
+    "password": "$2a$12$ldTIptDa8gKYDJMMYuqGZuHn.1J7ISroJKEGFUEI2CpjkAJbkme4G",
+    "avatar": "",
+    "createdAt": "2022-04-21T22:06:10.155Z",
+    "updatedAt": "2022-04-21T22:06:10.155Z"
+  },
+  {
+    "_id": "6261d56a7da88ce2f25f827e",
+    "username": "aarav",
+    "email": "aarav@example.com",
+    "role": "user",
+    "password": "$2a$12$lYCFlMOqWP5BRCDHEI8UbOa8sK53bsNbsCdyIiP0JuOi6wmwxTlqm",
+    "avatar": "",
+    "createdAt": "2022-04-21T22:06:34.298Z",
+    "updatedAt": "2022-04-21T22:06:34.298Z"
+  },
+  {
+    "_id": "6261d5747da88ce2f25f8280",
+    "username": "eliana",
+    "email": "eliana@example.com",
+    "role": "user",
+    "password": "$2a$12$zkB8AJjq.6wdYL2yaV0gLunWKEDCTM/uHi.xjd11Dp6JFzmR0HSbC",
+    "avatar": "",
+    "createdAt": "2022-04-21T22:06:44.755Z",
+    "updatedAt": "2022-04-21T22:06:44.755Z"
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "_id": "6260097567236fc0450e1fae",
+    "title": "Best Horror Movies",
+    "type": "movie",
+    "genre": "horror",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "6260099f67236fc0450e1fb1",
+    "title": "Best Comedy Movies",
+    "type": "movie",
+    "genre": "comedy",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "626009d267236fc0450e1fb4",
+    "title": "Amazing Movies",
+    "type": "movie",
+    "genre": "action",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "626009eb67236fc0450e1fb7",
+    "title": "Awesome Crime Movies",
+    "type": "movie",
+    "genre": "crime",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a0467236fc0450e1fba",
+    "title": "Awesome Crime Movies 2",
+    "type": "movie",
+    "genre": "crime",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a0767236fc0450e1fbd",
+    "title": "Awesome Crime Movies 3",
+    "type": "movie",
+    "genre": "crime",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a0867236fc0450e1fc0",
+    "title": "Awesome Crime Movies 4",
+    "type": "movie",
+    "genre": "crime",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a0a67236fc0450e1fc3",
+    "title": "Awesome Crime Movies 5",
+    "type": "movie",
+    "genre": "crime",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a0c67236fc0450e1fc6",
+    "title": "Awesome Crime Movies 6",
+    "type": "movie",
+    "genre": "crime",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a3667236fc0450e1fc9",
+    "title": "Awesome Crime Series",
+    "type": "series",
+    "genre": "crime",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a7067236fc0450e1fcc",
+    "title": "Awesome Comedy Series",
+    "type": "series",
+    "genre": "comedy",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a7467236fc0450e1fcf",
+    "title": "Awesome Comedy Series 2",
+    "type": "series",
+    "genre": "comedy",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a7767236fc0450e1fd2",
+    "title": "Awesome Comedy Series 3",
+    "type": "series",
+    "genre": "comedy",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a7967236fc0450e1fd5",
+    "title": "Awesome Comedy Series 4",
+    "type": "series",
+    "genre": "comedy",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  },
+  {
+    "_id": "62600a7a67236fc0450e1fd8",
+    "title": "Awesome Comedy Series 5",
+    "type": "series",
+    "genre": "comedy",
+    "content": [
+      "625ff42cc68e9b52a25d4851",
+      "625ff461c68e9b52a25d4855",
+      "625ff463c68e9b52a25d4859",
+      "625ff469c68e9b52a25d485d",
+      "625ff46cc68e9b52a25d4861",
+      "625ff46ec68e9b52a25d4865",
+      "625ff471c68e9b52a25d4869",
+      "625ff474c68e9b52a25d486d",
+      "625ff477c68e9b52a25d4871",
+      "625ff47ac68e9b52a25d4875"
+    ]
+  }
+]
