@@ -5,7 +5,7 @@ import APIFeatures from '../utils/apiFeatures.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 import NotFoundError from '../errors/notFound.js';
 
-exports.getAllMovies = asyncMiddleware(async (req, res, next) => {
+const getAllMovies = asyncMiddleware(async (req, res, next) => {
   const features = new APIFeatures(Movie.find(), req.query)
     .filter()
     .sort()
@@ -22,7 +22,7 @@ exports.getAllMovies = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.getMovieById = asyncMiddleware(async (req, res, next) => {
+const getMovieById = asyncMiddleware(async (req, res, next) => {
   const { id: movieID } = req.params;
 
   const movie = await Movie.findById(movieID);
@@ -37,7 +37,7 @@ exports.getMovieById = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.getMovieBySlug = asyncMiddleware(async (req, res, next) => {
+const getMovieBySlug = asyncMiddleware(async (req, res, next) => {
   const { slug } = req.params;
 
   const movie = await Movie.findOne({ slug });
@@ -52,7 +52,7 @@ exports.getMovieBySlug = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.getRandomMovies = asyncMiddleware(async (req, res, next) => {
+const getRandomMovies = asyncMiddleware(async (req, res, next) => {
   const { type } = req.query;
   let movie;
 
@@ -82,7 +82,7 @@ exports.getRandomMovies = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.searchMovies = asyncMiddleware(async (req, res, next) => {
+const searchMovies = asyncMiddleware(async (req, res, next) => {
   const movies = await Movie.find(
     {
       $text: {
@@ -109,7 +109,7 @@ exports.searchMovies = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.createMovie = asyncMiddleware(async (req, res, next) => {
+const createMovie = asyncMiddleware(async (req, res, next) => {
   const movie = await Movie.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json({
@@ -118,7 +118,7 @@ exports.createMovie = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.updateMovie = asyncMiddleware(async (req, res, next) => {
+const updateMovie = asyncMiddleware(async (req, res, next) => {
   const { id: movieID } = req.params;
 
   const movie = await Movie.findByIdAndUpdate(
@@ -140,7 +140,7 @@ exports.updateMovie = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.deleteMovie = asyncMiddleware(async (req, res, next) => {
+const deleteMovie = asyncMiddleware(async (req, res, next) => {
   const { id: movieID } = req.params;
 
   const movie = await Movie.findByIdAndDelete(movieID);
@@ -154,3 +154,16 @@ exports.deleteMovie = asyncMiddleware(async (req, res, next) => {
     movie: null,
   });
 });
+
+const movieController = {
+  getAllMovies,
+  getMovieById,
+  getMovieBySlug,
+  getRandomMovies,
+  searchMovies,
+  createMovie,
+  updateMovie,
+  deleteMovie,
+};
+
+export default movieController;
