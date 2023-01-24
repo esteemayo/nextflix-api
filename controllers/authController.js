@@ -22,7 +22,7 @@ const login = asyncMiddleware(async (req, res, next) => {
     return next(new UnauthenticatedError('Incorrect username or password'));
   }
 
-  createSendToken(user, StatusCodes.OK, res);
+  createSendToken(user, StatusCodes.OK, req, res);
 });
 
 const forgotPasword = asyncMiddleware(async (req, res, next) => {
@@ -108,7 +108,7 @@ const resetPassword = asyncMiddleware(async (req, res, next) => {
   user.resetPasswordExpires = undefined;
   await user.save();
 
-  createSendToken(user, StatusCodes.OK, res);
+  createSendToken(user, StatusCodes.OK, req, res);
 });
 
 const updatePassword = asyncMiddleware(async (req, res, next) => {
@@ -124,7 +124,7 @@ const updatePassword = asyncMiddleware(async (req, res, next) => {
   user.confirmPassword = confirmPassword;
   await user.save();
 
-  createSendToken(user, StatusCodes.OK, res);
+  createSendToken(user, StatusCodes.OK, req, res);
 });
 
 const authController = {
