@@ -1,6 +1,7 @@
 import express from 'express';
 
 import authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
@@ -12,7 +13,7 @@ router.post('/reset-password/:token', authController.resetPassword);
 
 router.patch(
   '/update-my-password',
-  authController.protect,
+  authMiddleware.protect,
   authController.updatePassword
 );
 
