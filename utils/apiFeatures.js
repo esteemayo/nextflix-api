@@ -5,12 +5,10 @@ class APIFeatures {
   }
 
   filter() {
-    // filtering
     const queryObj = { ...this.queryStr };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach((el) => delete queryObj[el]);
 
-    // advanced filtering
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
@@ -19,7 +17,6 @@ class APIFeatures {
   }
 
   sort() {
-    // sorting
     if (this.queryStr.sort) {
       const sortBy = this.queryStr.sort.split(',').join(' ');
       this.query = this.query.sort(sortBy);
@@ -30,7 +27,6 @@ class APIFeatures {
   }
 
   limitFields() {
-    // fields limiting
     if (this.queryStr.fields) {
       const fields = this.queryStr.fields.split(',').join(' ');
       this.query = this.query.select(fields);
@@ -41,7 +37,6 @@ class APIFeatures {
   }
 
   paginate() {
-    // paginate
     const page = Number(this.queryStr.page) || 1;
     const limit = Number(this.queryStr.limit) || 100;
     const skip = (page - 1) * limit;
