@@ -1,21 +1,21 @@
 import express from 'express';
 
-import authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 import listController from '../controllers/listController.js';
 
 const router = express.Router();
 
-router.use(authController.protect);
+router.use(authMiddleware.protect);
 
 router
   .route('/')
   .get(listController.getAllLists)
-  .post(authController.restrictTo('admin'), listController.createList);
+  .post(authMiddleware.restrictTo('admin'), listController.createList);
 
 router
   .route('/:id')
   .get(listController.getList)
-  .patch(authController.restrictTo('admin'), listController.updateList)
-  .delete(authController.restrictTo('admin'), listController.deleteList);
+  .patch(authMiddleware.restrictTo('admin'), listController.updateList)
+  .delete(authMiddleware.restrictTo('admin'), listController.deleteList);
 
 export default router;
