@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
+import asyncMiddleware from '../utils/asyncMiddleware.js';
+
 const protect = asyncMiddleware(async (req, res, next) => {
   let token;
   const authHeader = req.headers.authorization;
