@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
 import User from '../models/User.js';
-import ForbiddenError from './../errors/forbidden.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
+import ForbiddenError from '../errors/forbidden.js';
 
 const protect = asyncMiddleware(async (req, res, next) => {
   let token;
