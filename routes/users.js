@@ -1,13 +1,13 @@
 import express from 'express';
 
-import authController from '../controllers/authController.js';
+import authMiddleware from '../middlewares/authMiddleware.js';
 import userController from '../controllers/userController.js';
 
 const router = express.Router();
 
 router.post('/register', userController.register);
 
-router.use(authController.protect);
+router.use(authMiddleware.protect);
 
 router.get('/stats', userController.getUserStats);
 
@@ -19,13 +19,13 @@ router.delete('/delete-me', userController.deleteMe);
 
 router
   .route('/')
-  .get(authController.restrictTo('admin'), userController.getAllUsers)
+  .get(authMiddleware.restrictTo('admin'), userController.getAllUsers)
   .post(userController.createUser);
 
 router
   .route('/:id')
-  .get(authController.restrictTo('admin'), userController.getUser)
-  .patch(authController.restrictTo('admin'), userController.updateUser)
-  .delete(authController.restrictTo('admin'), userController.deleteUser);
+  .get(authMiddleware.restrictTo('admin'), userController.getUser)
+  .patch(authMiddleware.restrictTo('admin'), userController.updateUser)
+  .delete(authMiddleware.restrictTo('admin'), userController.deleteUser);
 
 export default router;
