@@ -1,4 +1,4 @@
-const asynMiddleware = (fn) => {
+const asyncMiddleware = (fn) => {
   return async (req, res, next) => {
     try {
       await fn(req, res, next);
@@ -8,4 +8,4 @@ const asynMiddleware = (fn) => {
   };
 };
 
-export default asynMiddleware;
+export default asyncMiddleware;
