@@ -7,7 +7,7 @@ import BadRequestError from '../errors/badRequest.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 import createSendToken from '../middlewares/createSendToken.js';
 
-exports.register = asyncMiddleware(async (req, res, next) => {
+const register = asyncMiddleware(async (req, res, next) => {
   const newUser = _.pick(req.body, [
     'email',
     'role',
@@ -23,7 +23,7 @@ exports.register = asyncMiddleware(async (req, res, next) => {
   createSendToken(user, StatusCodes.CREATED, res);
 });
 
-exports.updateMe = asyncMiddleware(async (req, res, next) => {
+const updateMe = asyncMiddleware(async (req, res, next) => {
   const { password, confirmPassword } = req.body;
 
   if (password || confirmPassword) {
@@ -48,7 +48,7 @@ exports.updateMe = asyncMiddleware(async (req, res, next) => {
   createSendToken(updatedUser, StatusCodes.OK, res);
 });
 
-exports.deleteMe = asyncMiddleware(async (req, res, next) => {
+const deleteMe = asyncMiddleware(async (req, res, next) => {
   await User.findByIdAndUpdate(req.user.id, { active: false });
 
   res.status(StatusCodes.NO_CONTENT).json({
@@ -57,7 +57,7 @@ exports.deleteMe = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.getAllUsers = asyncMiddleware(async (req, res, next) => {
+const getAllUsers = asyncMiddleware(async (req, res, next) => {
   const query = req.query.new;
 
   const users = query
@@ -72,7 +72,7 @@ exports.getAllUsers = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.getUserStats = asyncMiddleware(async (req, res, next) => {
+const getUserStats = asyncMiddleware(async (req, res, next) => {
   const now = new Date();
   const lastYear = new Date(now.setFullYear(now.getFullYear() - 1));
   const monthsArray = [
@@ -118,12 +118,12 @@ exports.getUserStats = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.getMe = (req, res, next) => {
+const getMe = (req, res, next) => {
   req.params.id = req.user.id;
   next();
 };
 
-exports.createUser = (req, res) => {
+const createUser = (req, res) => {
   res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
     status: 'fail',
     message: `This route is not defined! Please use ${req.protocol}://${req.get(
@@ -132,7 +132,22 @@ exports.createUser = (req, res) => {
   });
 };
 
-exports.getUser = factory.getOneById(User);
+const getUser = factory.getOneById(User);
 // do NOT update password with this
-exports.updateUser = factory.updateOne(User);
-exports.deleteUser = factory.deleteOne(User);
+const updateUser = factory.updateOne(User);
+const deleteUser = factory.deleteOne(User);
+
+const userController = {
+  register,
+  getAllUsers,
+  getMe,
+  getUser,
+  getUserStats,
+  createUser,
+  updateMe,
+  updateUser,
+  deleteMe,
+  deleteUser,
+};
+
+export default userController;
