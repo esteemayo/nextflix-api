@@ -132,8 +132,6 @@ const updatePassword = asyncMiddleware(async (req, res, next) => {
 
 const authController = {
   login,
-  protect,
-  restrictTo,
   forgotPasword,
   resetPassword,
   updatePassword,
