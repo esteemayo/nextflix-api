@@ -21,7 +21,7 @@ const register = asyncMiddleware(async (req, res, next) => {
   const user = await User.create({ ...newUser });
 
   if (user) {
-    createSendToken(user, StatusCodes.CREATED, res);
+    createSendToken(user, StatusCodes.CREATED, req, res);
   }
 });
 
@@ -47,7 +47,7 @@ const updateMe = asyncMiddleware(async (req, res, next) => {
     }
   );
 
-  createSendToken(updatedUser, StatusCodes.OK, res);
+  createSendToken(updatedUser, StatusCodes.OK, req, res);
 });
 
 const deleteMe = asyncMiddleware(async (req, res, next) => {
