@@ -4,7 +4,7 @@ import List from '../models/List.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 import NotFoundError from '../errors/notFound.js';
 
-exports.getAllLists = asyncMiddleware(async (req, res, next) => {
+const getAllLists = asyncMiddleware(async (req, res, next) => {
   const { type, genre } = req.query;
   let lists = [];
 
@@ -44,7 +44,7 @@ exports.getAllLists = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.getList = asyncMiddleware(async (req, res, next) => {
+const getList = asyncMiddleware(async (req, res, next) => {
   const { id: listID } = req.params;
 
   const list = await List.findById(listID);
@@ -59,7 +59,7 @@ exports.getList = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.createList = asyncMiddleware(async (req, res, next) => {
+const createList = asyncMiddleware(async (req, res, next) => {
   const list = await List.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json({
@@ -68,7 +68,7 @@ exports.createList = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.updateList = asyncMiddleware(async (req, res, next) => {
+const updateList = asyncMiddleware(async (req, res, next) => {
   const { id: listID } = req.params;
 
   const list = await List.findByIdAndUpdate(
@@ -90,7 +90,7 @@ exports.updateList = asyncMiddleware(async (req, res, next) => {
   });
 });
 
-exports.deleteList = asyncMiddleware(async (req, res, next) => {
+const deleteList = asyncMiddleware(async (req, res, next) => {
   const { id: listID } = req.params;
 
   const list = await List.findByIdAndDelete(listID);
@@ -104,3 +104,13 @@ exports.deleteList = asyncMiddleware(async (req, res, next) => {
     list: null,
   });
 });
+
+const listController = {
+  getAllLists,
+  getList,
+  createList,
+  updateList,
+  deleteList,
+};
+
+export default listController;
