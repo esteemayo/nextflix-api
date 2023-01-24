@@ -23,7 +23,6 @@ router.get('/random', movieController.getRandomMovies);
 
 router.get(
   '/details/:slug',
-
   movieController.getMovieBySlug
 );
 
