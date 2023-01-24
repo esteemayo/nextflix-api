@@ -1,8 +1,8 @@
-const { StatusCodes } = require('http-status-codes');
+import { StatusCodes } from 'http-status-codes';
 
-const List = require('../models/List');
-const NotFoundError = require('../errors/notFound');
-const asyncMiddleware = require('../utils/asyncMiddleware');
+import List from '../models/List.js';
+import asyncMiddleware from '../utils/asyncMiddleware.js';
+import NotFoundError from '../errors/notFound.js';
 
 exports.getAllLists = asyncMiddleware(async (req, res, next) => {
   const { type, genre } = req.query;
