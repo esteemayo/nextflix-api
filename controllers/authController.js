@@ -1,17 +1,17 @@
-const crypto = require('crypto');
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
-const { StatusCodes } = require('http-status-codes');
+import crypto from 'crypto';
+import jwt from 'jsonwebtoken';
+import { promisify } from 'util';
+import { StatusCodes } from 'http-status-codes';
 
-const User = require('../models/User');
-const sendEmail = require('../utils/email');
-const NotFoundError = require('../errors/notFound');
-const ForbiddenError = require('../errors/forbidden');
-const BadRequestError = require('../errors/badRequest');
-const CustomAPIError = require('../errors/customAPIError');
-const asyncMiddleware = require('../utils/asyncMiddleware');
-const UnauthenticatedError = require('../errors/unauthenticated');
-const createSendToken = require('../middlewares/createSendToken');
+import User from '../models/User.js';
+import NotFoundError from '../errors/notFound.js';
+import sendEmail from '../utils/email.js';
+import BadRequestError from '../errors/badRequest.js';
+import ForbiddenError from '../errors/forbidden.js';
+import asyncMiddleware from '../utils/asyncMiddleware.js';
+import CustomAPIError from '../errors/customAPIError.js';
+import createSendToken from '../middlewares/createSendToken.js';
+import UnauthenticatedError from '../errors/unauthenticated.js';
 
 exports.login = asyncMiddleware(async (req, res, next) => {
   const { username, password } = req.body;
