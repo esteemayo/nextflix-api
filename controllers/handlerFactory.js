@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 
-import APIFeatures from '../utils/apiFeatures';
-import asyncMiddleware from '../utils/asyncMiddleware';
-import NotFoundError from '../errors/notFound';
+import APIFeatures from '../utils/apiFeatures.js';
+import asyncMiddleware from '../utils/asyncMiddleware.js';
+import NotFoundError from '../errors/notFound.js';
 
 const getAll = (Model) =>
   asyncMiddleware(async (req, res, next) => {
