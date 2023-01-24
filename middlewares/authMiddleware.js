@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
+import User from '../models/User.js';
 import ForbiddenError from './../errors/forbidden.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 
