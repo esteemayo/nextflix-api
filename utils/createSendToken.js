@@ -14,12 +14,17 @@ const createSendToken = (user, statusCode, res) => {
 
   res.cookie('jwtToken', token, cookieOptions);
 
-  const { password, ...rest } = user._doc;
+  const { password, role, ...rest } = user._doc;
+
+  const details = {
+    token,
+    ...rest,
+  };
 
   res.status(statusCode).json({
     status: 'success',
-    token,
-    user: rest,
+    details,
+    role,
   });
 };
 
