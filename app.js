@@ -1,25 +1,25 @@
-const express = require('express');
-const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
-const hpp = require('hpp');
-const compression = require('compression');
-const swaggerUI = require('swagger-ui-express');
-const YAML = require('yamljs');
+import express from 'express';
+import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import mongoSanitize from 'express-mongo-sanitize';
+import xss from 'xss-clean';
+import hpp from 'hpp';
+import compression from 'compression';
+import swaggerUI from 'swagger-ui-express';
+import YAML from 'yamljs';
 
 const swaggerDocument = YAML.load('./swagger.yaml');
 
 // requiring routes
-const authRoute = require('./routes/auth');
-const userRoute = require('./routes/users');
-const listRoute = require('./routes/lists');
-const movieRoute = require('./routes/movies');
-const NotFoundError = require('./errors/notFound');
-const errorHandlerMiddleware = require('./middlewares/errorHandler');
+import authRoute from './routes/auth.js';
+import userRoute from './routes/users.js';
+import listRoute from './routes/lists.js';
+import movieRoute from './routes/movies.js';
+import NotFoundError from './errors/notFound.js';
+import errorHandlerMiddleware from './middlewares/errorHandler.js';
 
 const app = express();
 
@@ -93,4 +93,4 @@ app.use('*', (req, res, next) => {
 
 app.use(errorHandlerMiddleware);
 
-module.exports = app;
+export default app;
