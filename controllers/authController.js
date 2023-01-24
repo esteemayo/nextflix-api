@@ -1,13 +1,10 @@
 import crypto from 'crypto';
-import jwt from 'jsonwebtoken';
-import { promisify } from 'util';
 import { StatusCodes } from 'http-status-codes';
 
 import User from '../models/User.js';
 import NotFoundError from '../errors/notFound.js';
 import sendEmail from '../utils/email.js';
 import BadRequestError from '../errors/badRequest.js';
-import ForbiddenError from '../errors/forbidden.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 import CustomAPIError from '../errors/customAPIError.js';
 import createSendToken from '../utils/createSendToken.js';
