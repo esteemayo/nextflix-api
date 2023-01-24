@@ -133,7 +133,6 @@ const createUser = (req, res) => {
 };
 
 const getUser = factory.getOneById(User);
-// do NOT update password with this
 const updateUser = factory.updateOne(User);
 const deleteUser = factory.deleteOne(User);
 
