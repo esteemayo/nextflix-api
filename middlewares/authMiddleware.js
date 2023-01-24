@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
-import { StatusCodes } from 'http-status-codes';
 
 const protect = asyncMiddleware(async (req, res, next) => {
   let token;
