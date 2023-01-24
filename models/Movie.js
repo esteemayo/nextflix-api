@@ -1,5 +1,5 @@
-const slugify = require('slugify');
-const mongoose = require('mongoose');
+import slugify from 'slugify';
+import mongoose from 'mongoose';
 
 const movieSchema = new mongoose.Schema(
   {
@@ -70,4 +70,4 @@ movieSchema.pre('save', async function (next) {
 
 const Movie = mongoose.model('Movie', movieSchema);
 
-module.exports = Movie;
+export default Movie;
