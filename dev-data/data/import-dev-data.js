@@ -1,4 +1,3 @@
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import 'colors';
@@ -7,27 +6,12 @@ import 'colors';
 import List from '../../models/List.js';
 import User from '../../models/User.js';
 import Movie from '../../models/Movie.js';
+import connectDB from '../../config/db.js';
 
 dotenv.config({ path: './config.env' });
 
-// db local
-const dbLocal = process.env.DATABASE_LOCAL;
-
-// atlas mongo uri
-const mongoURI = process.env.DATABASE.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
-);
-
 // MongoDB connection
-mongoose
-  .connect(mongoURI)
-  .then(() =>
-    console.log(`Connected to MongoDB successfully → ${mongoURI}`.gray.bold)
-  )
-  .catch((err) =>
-    console.log(`Could not connect to MongoDB successfully → ${err}`)
-  );
+connectDB();
 
 // read JSON file
 const lists = JSON.parse(fs.readFileSync(`${__dirname}/lists.json`, 'utf-8'));
