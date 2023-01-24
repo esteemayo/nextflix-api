@@ -1,9 +1,9 @@
-const { StatusCodes } = require('http-status-codes');
+import { StatusCodes } from 'http-status-codes';
 
-const Movie = require('../models/Movie');
-const APIFeatures = require('../utils/apiFeatures');
-const NotFoundError = require('../errors/notFound');
-const asyncMiddleware = require('../utils/asyncMiddleware');
+import Movie from '../models/Movie.js';
+import APIFeatures from '../utils/apiFeatures.js';
+import asyncMiddleware from '../utils/asyncMiddleware.js';
+import NotFoundError from '../errors/notFound.js';
 
 exports.getAllMovies = asyncMiddleware(async (req, res, next) => {
   const features = new APIFeatures(Movie.find(), req.query)
