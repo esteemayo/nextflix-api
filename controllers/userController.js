@@ -20,7 +20,9 @@ const register = asyncMiddleware(async (req, res, next) => {
 
   const user = await User.create({ ...newUser });
 
-  createSendToken(user, StatusCodes.CREATED, res);
+  if (user) {
+    createSendToken(user, StatusCodes.CREATED, res);
+  }
 });
 
 const updateMe = asyncMiddleware(async (req, res, next) => {
