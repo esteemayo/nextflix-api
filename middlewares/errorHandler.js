@@ -1,4 +1,4 @@
-const { StatusCodes } = require('http-status-codes');
+import { StatusCodes } from 'http-status-codes';
 
 const handleCastErrorDB = (customError, err) => {
   customError.message = `No item found with ID: ${err.value}`;
@@ -64,4 +64,4 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   }
 };
 
-module.exports = errorHandlerMiddleware;
+export default errorHandlerMiddleware;
