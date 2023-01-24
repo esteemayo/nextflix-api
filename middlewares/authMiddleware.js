@@ -62,7 +62,7 @@ const restrictTo =
 
 const verifyUser = (req, res, next) => {
   if (
-    req.user._id === req.params.id ||
+    req.user.id === req.params.id ||
     req.user.role === 'admin') {
     return next();
   }
