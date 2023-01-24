@@ -10,6 +10,7 @@ import hpp from 'hpp';
 import compression from 'compression';
 import swaggerUI from 'swagger-ui-express';
 import YAML from 'yamljs';
+import dotenv from 'dotenv';
 
 const swaggerDocument = YAML.load('./swagger.yaml');
 
@@ -20,6 +21,8 @@ import listRoute from './routes/lists.js';
 import movieRoute from './routes/movies.js';
 import NotFoundError from './errors/notFound.js';
 import errorHandlerMiddleware from './middlewares/errorHandler.js';
+
+dotenv.config({ path: './config.env' });
 
 const app = express();
 
