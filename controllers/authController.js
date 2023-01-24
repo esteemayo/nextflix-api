@@ -10,7 +10,7 @@ import BadRequestError from '../errors/badRequest.js';
 import ForbiddenError from '../errors/forbidden.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 import CustomAPIError from '../errors/customAPIError.js';
-import createSendToken from '../middlewares/createSendToken.js';
+import createSendToken from '../utils/createSendToken.js';
 import UnauthenticatedError from '../errors/unauthenticated.js';
 
 const login = asyncMiddleware(async (req, res, next) => {
