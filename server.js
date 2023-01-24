@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 require('colors');
 
 process.on('uncaughtException', (err) => {
@@ -9,7 +9,7 @@ process.on('uncaughtException', (err) => {
 });
 
 dotenv.config({ path: './config.env' });
-const app = require('./app');
+import app from './app.js';
 
 // db local
 const dbLocal = process.env.DATABASE_LOCAL;
