@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
+import ForbiddenError from './../errors/forbidden.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 
 const protect = asyncMiddleware(async (req, res, next) => {
@@ -60,9 +61,19 @@ const restrictTo = (...roles) => {
   };
 };
 
+const verifyUser = (req, res, next) => {
+  if (
+    req.user._id === req.params.id ||
+    req.user.role === 'admin') {
+    return next();
+  }
+  return next(new ForbiddenError('You are not authorized'));
+}
+
 const authMiddleware = {
   protect,
   restrictTo,
+  verifyUser,
 };
 
 export default authMiddleware;
