@@ -91,19 +91,9 @@ userSchema.methods.comparePassword = async function (candidatePassword) {
 };
 
 userSchema.methods.generateAuthToken = function () {
-  return jwt.sign(
-    {
-      id: this._id,
-      role: this.role,
-      email: this.email,
-      avatar: this.avatar,
-      username: this.username,
-    },
-    process.env.JWT_SECRET_KEY,
-    {
-      expiresIn: process.env.JWT_EXPIRES_IN,
-    }
-  );
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
+  });
 };
 
 userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
