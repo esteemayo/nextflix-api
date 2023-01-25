@@ -47,7 +47,6 @@ const userSchema = new mongoose.Schema(
     },
     avatar: {
       type: String,
-      default: '',
     },
     passwordChangedAt: Date,
     resetPasswordToken: String,
