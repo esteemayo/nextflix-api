@@ -107,5 +107,25 @@
     "avatar": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/users%2F1674660645110-user-2.jpeg?alt=media&token=bac0f499-d1c9-4cbb-8be0-f2ba554266ea",
     "createdAt": "2023-01-25T15:30:48.062Z",
     "updatedAt": "2023-01-25T15:30:48.062Z"
+  },
+  {
+    "_id": "63d14ef64c3c0d89756526c1",
+    "username": "terry",
+    "email": "terry@example.com",
+    "role": "user",
+    "password": "$2a$12$CGjloEMz0t8gdz4oWomV2uW5GikuvUirJ676ezyUjL6U3jTrKhocq",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/users%2F1674661620633-user-1.jpg?alt=media&token=94af41a1-ad4a-4dd7-bf93-f50e7dc50e2b",
+    "createdAt": "2023-01-25T15:47:02.576Z",
+    "updatedAt": "2023-01-25T15:47:02.576Z"
+  },
+  {
+    "_id": "63d14f524c3c0d89756526c9",
+    "username": "elanga",
+    "email": "elanga@example.com",
+    "role": "user",
+    "password": "$2a$12$E9V8LYDwEi.bDkUUAwjQT.2Awejgs8PyUTiH6SAVPpUrvmbrj/oWO",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/users%2F1674661711931-user-3.jpg?alt=media&token=786cf19a-7f79-4692-93ca-9ddf9aaa0dfd",
+    "createdAt": "2023-01-25T15:48:34.582Z",
+    "updatedAt": "2023-01-25T15:48:34.582Z"
   }
 ]
