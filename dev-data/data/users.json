@@ -95,8 +95,17 @@
     "email": "eliana@example.com",
     "role": "user",
     "password": "$2a$12$zkB8AJjq.6wdYL2yaV0gLunWKEDCTM/uHi.xjd11Dp6JFzmR0HSbC",
-    "avatar": "",
     "createdAt": "2022-04-21T22:06:44.755Z",
     "updatedAt": "2022-04-21T22:06:44.755Z"
+  },
+  {
+    "_id": "63d14b27f16511be54725038",
+    "username": "katie",
+    "email": "kate@example.com",
+    "role": "user",
+    "password": "$2a$12$vl6bXFwkYQHZxn7C5pkHeui37UWZltzDxX/mP5GE5uORLsicdUNM2",
+    "avatar": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/users%2F1674660645110-user-2.jpeg?alt=media&token=bac0f499-d1c9-4cbb-8be0-f2ba554266ea",
+    "createdAt": "2023-01-25T15:30:48.062Z",
+    "updatedAt": "2023-01-25T15:30:48.062Z"
   }
 ]
