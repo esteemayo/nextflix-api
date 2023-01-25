@@ -269,14 +269,14 @@
     "_id": "625ff4d2c68e9b52a25d489d",
     "title": "Flash 10",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices feugiat quam, vel finibus urna feugiat consequat. Etiam condimentum, sem ac ultrices imperdiet, metus nisl viverra mauris, et ullamcorper lorem nisi et nulla. Praesent fermentum ut lectus ut dignissim. Etiam in massa aliquet, laoreet metus eu, mollis ante. Donec cursus, lectus porttitor ornare ultricies, odio purus luctus quam, et pretium dolor lorem nec nulla. Donec mattis ac lorem at pulvinar. Nullam tempor at elit a semper. Duis nec semper neque, ac tristique nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
-    "img": "https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "imgTitle": "https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "imgSm": "https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "trailer": "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761",
-    "video": "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761",
-    "year": "2000",
-    "limit": 16,
-    "genre": "Romance",
+    "img": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/movies%2F1674672715287-img-bigO.webp?alt=media&token=7599e1d8-7e84-4e69-b587-679726fe7efb",
+    "imgTitle": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/movies%2F1674672715288-imgTitle-chatGPT.webp?alt=media&token=bab5de0e-0e9a-420f-a575-cfea4c167127",
+    "imgSm": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/movies%2F1674672715287-imgSm-classed.webp?alt=media&token=281af7b9-0811-4f1f-a7cb-5b177d46e566",
+    "trailer": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/movies%2F1674672715290-trailer-Pexels%20Videos%202699.mp4?alt=media&token=c5315efe-9706-4f43-b9f7-d1ea84f7915a",
+    "video": "https://firebasestorage.googleapis.com/v0/b/netflix-5a7e2.appspot.com/o/movies%2F1674672715288-video-Pexels%20Videos%202833.mp4?alt=media&token=fe9307a9-a4e4-4d55-9e83-846b91f5a977",
+    "year": "2023",
+    "limit": 18,
+    "genre": "Action",
     "isSeries": true
   }
 ]
