@@ -1,3 +1,4 @@
+import slugify from 'slugify';
 import { StatusCodes } from 'http-status-codes';
 
 import Movie from '../models/Movie.js';
@@ -120,6 +121,8 @@ const createMovie = asyncMiddleware(async (req, res, next) => {
 
 const updateMovie = asyncMiddleware(async (req, res, next) => {
   const { id: movieID } = req.params;
+
+  if (req.body.title) req.body.slug = slugify(req.body.title, { lower: true });
 
   const movie = await Movie.findByIdAndUpdate(
     movieID,
