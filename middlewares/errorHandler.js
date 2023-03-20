@@ -35,8 +35,8 @@ const sendErrorDev = (err, res) =>
     stack: err.stack,
   });
 
-const sendErrorProd = (err, res) => {
-  return res.status(err.statusCode).json({
+const sendErrorProd = (err, res) =>
+  res.status(err.statusCode).json({
     status: err.status,
     message: err.message,
   });
