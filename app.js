@@ -11,6 +11,7 @@ import compression from 'compression';
 import swaggerUI from 'swagger-ui-express';
 import YAML from 'yamljs';
 import dotenv from 'dotenv';
+import 'colors';
 
 const swaggerDocument = YAML.load('./swagger.yaml');
 
