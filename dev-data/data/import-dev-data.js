@@ -6,7 +6,6 @@ import 'colors';
 
 // models
 import List from '../../models/List.js';
-import User from '../../models/User.js';
 import Movie from '../../models/Movie.js';
 import User from '../../models/User.js';
 import connectDB from '../../config/db.js';
