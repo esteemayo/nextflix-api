@@ -40,7 +40,6 @@ const sendErrorProd = (err, res) =>
     status: err.status,
     message: err.message,
   });
-};
 
 const errorHandlerMiddleware = (err, req, res, next) => {
   const customError = {
