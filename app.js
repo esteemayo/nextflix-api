@@ -19,8 +19,6 @@ const swaggerDocument = YAML.load('./swagger.yaml');
 import authRoute from './routes/auth.js';
 import movieRoute from './routes/movies.js';
 import userRoute from './routes/users.js';
-import listRoute from './routes/lists.js';
-import movieRoute from './routes/movies.js';
 import NotFoundError from './errors/notFound.js';
 import listRoute from './routes/lists.js';
 import errorHandlerMiddleware from './middlewares/errorHandler.js';
