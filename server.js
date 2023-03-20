@@ -1,5 +1,3 @@
-import 'colors';
-
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! 🔥 Shutting down...'.red.bold);
   console.log(err.name, err.message);
