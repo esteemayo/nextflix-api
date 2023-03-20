@@ -4,8 +4,6 @@ import { StatusCodes } from 'http-status-codes';
 import User from '../models/User.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 import factory from './handlerFactory.js';
-import BadRequestError from '../errors/badRequest.js';
-import asyncMiddleware from '../utils/asyncMiddleware.js';
 import createSendToken from '../utils/createSendToken.js';
 import BadRequestError from '../errors/badRequest.js';
 
