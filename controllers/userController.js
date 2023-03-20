@@ -7,6 +7,7 @@ import factory from './handlerFactory.js';
 import BadRequestError from '../errors/badRequest.js';
 import asyncMiddleware from '../utils/asyncMiddleware.js';
 import createSendToken from '../utils/createSendToken.js';
+import BadRequestError from '../errors/badRequest.js';
 
 const register = asyncMiddleware(async (req, res, next) => {
   const newUser = _.pick(req.body, [
